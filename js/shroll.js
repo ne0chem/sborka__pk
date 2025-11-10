@@ -1,8 +1,6 @@
 const navbar = document.querySelector(".header__nav");
 const links = navbar.querySelectorAll(".header__link");
 
-console.log(links);
-
 links.forEach((link) => {
   link.addEventListener("click", (e) => {
     event.preventDefault();
