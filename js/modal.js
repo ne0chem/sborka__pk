@@ -29,3 +29,53 @@ const Modal = () => {
   });
 };
 Modal();
+
+// Функции для бургер-меню
+function toggleMobileMenu() {
+  const burger = document.getElementById("burger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const body = document.body;
+
+  burger.classList.toggle("active");
+  mobileMenu.classList.toggle("active");
+
+  if (mobileMenu.classList.contains("active")) {
+    body.style.overflow = "hidden";
+  } else {
+    body.style.overflow = "";
+  }
+}
+
+function closeMobileMenu() {
+  const burger = document.getElementById("burger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const body = document.body;
+
+  burger.classList.remove("active");
+  mobileMenu.classList.remove("active");
+  body.style.overflow = "";
+}
+
+// Инициализация
+document.addEventListener("DOMContentLoaded", function () {
+  const burger = document.getElementById("burger");
+  if (burger) {
+    burger.addEventListener("click", toggleMobileMenu);
+  }
+
+  // Закрытие меню при клике на ссылку
+  const mobileLinks = document.querySelectorAll(".mobile-link");
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", closeMobileMenu);
+  });
+
+  // Закрытие меню при клике вне его области
+  const mobileMenu = document.getElementById("mobileMenu");
+  if (mobileMenu) {
+    mobileMenu.addEventListener("click", function (e) {
+      if (e.target === mobileMenu) {
+        closeMobileMenu();
+      }
+    });
+  }
+});

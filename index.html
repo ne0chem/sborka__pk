@@ -18,23 +18,44 @@
     </script>
   </head>
   <body>
-    <header class="header">
-      <div class="header__wrap">
-        <a href="#" class="header__logo">
-          <img src="./img/logo.svg" alt="" />
-        </a>
-        <div class="header__menu">
-          <nav class="header__nav">
-            <a class="header__link" href="#work">Чем занимаемся</a>
-            <a class="header__link" href="#process">Процесс работы</a>
-            <a class="header__link" href="#comand">Команда</a>
-          </nav>
-          <button tupe="button" class="header__btn button modall__button"">
-            Оставить заявку
-          </button>
-        </div>
-      </div>
-    </header>
+   <header class="header">
+  <div class="header__wrap">
+    <a href="#" class="header__logo">
+      <img src="./img/logo.svg" alt="Логотип" />
+    </a>
+    
+    <!-- Бургер-кнопка -->
+    <button class="burger" id="burger">
+      <span class="burger__line"></span>
+      <span class="burger__line"></span>
+      <span class="burger__line"></span>
+    </button>
+    
+    <!-- Десктопное меню -->
+    <div class="header__menu">
+      <nav class="header__nav">
+        <a class="header__link" href="#work">Чем занимаемся</a>
+        <a class="header__link" href="#process">Процесс работы</a>
+        <a class="header__link" href="#comand">Команда</a>
+      </nav>
+      <button type="button" class="header__btn button modall__button">
+        Оставить заявку
+      </button>
+    </div>
+    
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobileMenu">
+      <nav class="mobile-nav">
+        <a class="mobile-link" href="#work" onclick="closeMobileMenu()">Чем занимаемся</a>
+        <a class="mobile-link" href="#process" onclick="closeMobileMenu()">Процесс работы</a>
+        <a class="mobile-link" href="#comand" onclick="closeMobileMenu()">Команда</a>
+      </nav>
+      <button type="button" class="mobile-btn button modall__button" onclick="closeMobileMenu()">
+        Оставить заявку
+      </button>
+    </div>
+  </div>
+</header>
     <main class="main">
       <section class="main-display">
         <div class="container">
@@ -66,98 +87,8 @@
         </div>
       </section>
       <section>
-<div class="course">
-            <div class="container">
-                <div class="course__wrap">
-                    <div class="course-button__wrap">
-                        <button class="button course__button">Заказать курс</button>
-                    </div>
-                    <div class="course__counter">
-                        <div class="course__counter-line">
-                            <span>Учеников всего:</span>
-                            <span class="course__number">200</span>
-                        </div>
-                        <div class="course__counter-line">
-                            <span>Успешно закончили курс:</span>
-                            <span class="course__number">190</span>
-                        </div>
-                    </div>
-                    <div class="course__progress">
-                        <div class="course__progress-label">
-                            <span>Заработано учениками:</span>
-                            <span class="course__number">400 000₽</span>
-                        </div>
-                        <div class="course__progress-element">
-                            <progress min="0" max="1000000" value="400000" />
-                        </div>
-                        <div class="course__progress-minmax">
-                            <span>0₽</span>
-                            <span>1 000 000₽</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-         <section class="program">
-            <div class="container">
-                <div class="program__image">
-                    <img src="./img/program.svg" alt="">
-                </div>
-                <h2 class="program__header">Программа обучения</h2>
-                <p class="program__description">Больше 90% учеников прошли полный курс и смогли собрать свой первый
-                    компьютер</p>
-                <div class="program__content">
-                    <div class="program-line">
-                        <div class="program-line__content">
-                            <h3 class="program-line__title">Неделя №1</h3>
-                            <p class="program-line__descr active">
-                                Красивая часть курса,
-                                которая помогает в успехе
-                            </p>
-                        </div>
-                        <div class="program-line__content">
-                            <h3 class="program-line__title">Неделя №2</h3>
-                            <p class="program-line__descr">
-                                Красивая часть курса,
-                                которая помогает в успехе
-                            </p>
-                        </div>
-                    </div>
-                    <div class="program-line">
-                        <div class="program-line__content">
-                            <h3 class="program-line__title">Неделя №3</h3>
-                            <p class="program-line__descr">
-                                Красивая часть курса,
-                                которая помогает в успехе
-                            </p>
-                        </div>
-                        <div class="program-line__content">
-                            <h3 class="program-line__title">Неделя №4</h3>
-                            <p class="program-line__descr">
-                                Красивая часть курса,
-                                которая помогает в успехе
-                            </p>
-                        </div>
-                    </div>
-                    <div class="program-line">
-                        <div class="program-line__content">
-                            <h3 class="program-line__title">Неделя №5</h3>
-                            <p class="program-line__descr">
-                                Красивая часть курса,
-                                которая помогает в успехе
-                            </p>
-                        </div>
-                        <div class="program-line__content">
-                            <h3 class="program-line__title">Неделя №6</h3>
-                            <p class="program-line__descr">
-                                Красивая часть курса,
-                                которая помогает в успехе
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
+        
       <section class="work" id ="work">
         <div class="container">
           <div class="work__wrap">
@@ -329,7 +260,6 @@
     </form>
     <script src="https://cdn.jsdelivr.net/npm/seamless-scroll-polyfill@latest"></script>
     <script src="/js/modal.js" defer></script>
-     <script src="/js/accardion.js" defer></script>
      <script src="/js/shroll.js" defer></script>
         <script src="/js/timer.js" defer></script>
         <script src="/js/sandForm.js"></script>
